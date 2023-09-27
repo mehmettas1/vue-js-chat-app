@@ -24,7 +24,9 @@ export default {
     const displayName = ref("");
     const email = ref("");
     const password = ref("");
-
+const handleSubmit=()=>{
+  console.log(displayName.value,email.value,password.value);
+}
     return { displayName, email, password };
   },
 };

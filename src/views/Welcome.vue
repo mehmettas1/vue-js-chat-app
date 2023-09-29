@@ -1,23 +1,30 @@
 <template>
   <div class="welcome container">
     <p>Welcome</p>
-    <SignUpForm />
-    <LoginForm />
+    <div v-if="showLogin">
+      <h2>Login</h2>
+      <LoginForm />
+    </div>
+    <div v-else>
+<h2>Signup</h2>
+      <SignUpForm />
+    </div>
   </div>
 </template>
 
 <script>
 import SignUpForm from "@/components/SignUpForm.vue";
 import LoginForm from "@/components/LoginForm.vue";
+import { ref } from "vue";
 
-export default { 
+export default {
   components: { SignUpForm, LoginForm },
-  
-  setup(props) {
-    
-  }
-  
-  };
+
+  setup() {
+    const showLogin = ref(true);
+    return showLogin;
+  },
+};
 </script>
 <style>
 .welcome {

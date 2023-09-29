@@ -10,7 +10,14 @@
 import SignUpForm from "@/components/SignUpForm.vue";
 import LoginForm from "@/components/LoginForm.vue";
 
-export default { components: { SignUpForm, LoginForm } };
+export default { 
+  components: { SignUpForm, LoginForm },
+  
+  setup(props) {
+    
+  }
+  
+  };
 </script>
 <style>
 .welcome {

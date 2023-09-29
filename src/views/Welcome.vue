@@ -4,12 +4,12 @@
     <div v-if="showLogin">
       <h2>Login</h2>
       <LoginForm />
-      <p>No account yet? <span @click="showLogin =false" > Signup</span></p>
+      <p>No account yet? <span @click="showLogin = false"> Signup</span></p>
     </div>
     <div v-else>
-<h2>Signup</h2>
+      <h2>Signup</h2>
       <SignUpForm />
-      <p>Already registered? <span @click="showLogin =true" > Login</span></p>
+      <p>Already registered? <span @click="showLogin = true"> Login</span></p>
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
 
   setup() {
     const showLogin = ref(true);
-    return showLogin;
+    return { showLogin };
   },
 };
 </script>
@@ -51,5 +51,15 @@ export default {
   outline: none;
   color: #777;
   margin: 10px auto;
+}
+
+.welcome span {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.welcome button {
+  margin: 20px auto;
 }
 </style>

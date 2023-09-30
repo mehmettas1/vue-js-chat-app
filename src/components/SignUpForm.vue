@@ -13,6 +13,9 @@
       placeholder="password "
       v-model="password"
     />
+    <div class="error">
+      {{ error }}
+    </div>
     <button>Signup</button>
   </form>
 </template>
@@ -29,7 +32,7 @@ export default {
     const handleSubmit = async () => {
       await signup(email.value, password.value, displayName.value);
     };
-    return { displayName, email, password, handleSubmit };
+    return { displayName, email, password, handleSubmit, error };
   },
 };
 </script>

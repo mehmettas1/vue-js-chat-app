@@ -3,12 +3,12 @@
     <p>Welcome</p>
     <div v-if="showLogin">
       <h2>Login</h2>
-      <LoginForm @click="enterChat" />
+      <LoginForm @login="enterChat" />
       <p>No account yet? <span @click="showLogin = false"> Signup</span></p>
     </div>
     <div v-else>
       <h2>Signup</h2>
-      <SignUpForm />
+      <SignUpForm @signup="enterChat"  />
       <p>Already registered? <span @click="showLogin = true"> Login</span></p>
     </div>
   </div>
@@ -27,9 +27,9 @@ export default {
     const showLogin = ref(true);
     const router = useRouter();
     const enterChat = () => {
-      router.push({ name: "chatromm" });
+      router.push({ name: "chatroom" });
     };
-    return { showLogin };
+    return { showLogin,enterChat };
   },
 };
 </script>

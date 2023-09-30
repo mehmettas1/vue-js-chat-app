@@ -32,7 +32,7 @@ export default {
     const handleSubmit = async () => {
       await signup(email.value, password.value, displayName.value);
       if(!error.value){
-       context.emit('login')
+       context.emit('signup')
       }
     };
     return { displayName, email, password, handleSubmit, error };

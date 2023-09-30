@@ -1,8 +1,5 @@
 <template>
-  <nav>
-    <router-link to="/">welcome</router-link> |
-    <router-link to="/chatroom">chatroom</router-link>
-  </nav>
+
   <router-view />
 </template>
 

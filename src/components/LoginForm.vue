@@ -7,6 +7,9 @@
       placeholder="password "
       v-model="password"
     />
+    <div class="error">
+      {{ error }}
+    </div>
     <button>Login</button>
   </form>
 </template>
@@ -17,17 +20,17 @@ import useLogin from "../composables/useLogin";
 
 
 export default {
-  setup() {
+  setup(props,context) {
     const email = ref("");
     const password = ref("");
     const {error,login} = useLogin()
     const handleSubmit = async() => {
       await login (email.value,password.value)
       if(!error.value){
-        console.log('Login Success');
+       context.emit('login')
       }
     };
-    return { email, password, handleSubmit };
+    return { email, password, handleSubmit,error };
   },
 };
 </script>

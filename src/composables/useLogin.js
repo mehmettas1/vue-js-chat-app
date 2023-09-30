@@ -17,7 +17,7 @@ const login = async (email, password) => {
 };
 
 const useLogin = () => {
-  return { error, password };
+  return { error, login };
 };
 
 export default useLogin;

@@ -6,7 +6,7 @@ import { projectAuth } from "../firebase/config";
 
 const error = ref(null);
 
-const logout = async (email, password) => {
+const logout = async () => {
   error.value = null;
   try {
    await projectAuth.signOut();

@@ -19,7 +19,8 @@
 </template>
 <script>
 import getCollection from "@/composables/getCollection";
-
+import { formatDistanceToNow } from "date-fns";
+import { computed } from "vue";
 export default {
   setup() {
     const { error, documents } = getCollection("messages");
@@ -32,27 +33,24 @@ export default {
   background: #fafafa;
   padding: 30px 20px;
   text-align: left;
-  
 }
 .single {
-    margin: 18px 0;
+  margin: 18px 0;
 }
 
 .created-at {
-    display: block;
-    color: #999;
-    font-size: 12px;
-    margin-bottom: 5px;
-
+  display: block;
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 .name {
-    font-weight: bold;
-    margin-right: 7px;
-
+  font-weight: bold;
+  margin-right: 7px;
 }
 
 .messages {
-    max-height: 400px;
-    overflow: auto;
+  max-height: 400px;
+  overflow: auto;
 }
 </style>

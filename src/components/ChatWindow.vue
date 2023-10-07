@@ -24,6 +24,13 @@ import { computed } from "vue";
 export default {
   setup() {
     const { error, documents } = getCollection("messages");
+    const formatedDocuments = computed(()=>{
+        if(documents.value){
+            return documents.value.map(doc=>{
+                let time = formatDistanceToNow( doc.createdAt.toDate())
+            })
+        }
+    })
     return { error, documents };
   },
 };

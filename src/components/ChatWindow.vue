@@ -4,16 +4,16 @@
 
     <div v-if="documents" class="messages">
       <div v-for="doc in documents" :key="doc.id" class="single">
-    <span class="created-at">
-        {{ doc.createdAt }}
-    </span>
-    <span class="name">
-        {{ doc.name }}
-    </span>
-    <span class="message">
-        {{ doc.message }}
-    </span>
-</div>
+        <span class="created-at">
+          {{ doc.createdAt.toDate() }}
+        </span>
+        <span class="name">
+          {{ doc.name }}
+        </span>
+        <span class="message">
+          {{ doc.message }}
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -27,3 +27,32 @@ export default {
   },
 };
 </script>
+<style>
+.chat-window {
+  background: #fafafa;
+  padding: 30px 20px;
+  text-align: left;
+  
+}
+.single {
+    margin: 18px 0;
+}
+
+.created-at {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 5px;
+
+}
+.name {
+    font-weight: bold;
+    margin-right: 7px;
+
+}
+
+.messages {
+    max-height: 400px;
+    overflow: auto;
+}
+</style>
